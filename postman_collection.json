@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "a8a0b0f0-1b1a-4e1a-8f0a-6a0a0a0a0a0a",
+		"name": "Mental Health AI (Simplified)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "Post Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"prompt\": \"I had a really great day today!\",\n    \"model\": \"x-ai/grok-4-fast:free\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/chat",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "Detect Stress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"x-ai/grok-4-fast:free\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/stress/detect",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stress",
+								"detect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stress History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/stress/history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stress",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detect Mood",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"model\": \"x-ai/grok-4-fast:free\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/mood/detect",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"mood",
+								"detect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mood History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/mood/history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"mood",
+								"history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recommendations",
+			"item": [
+				{
+					"name": "Get Recommendations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recommendations",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recommendations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:5000",
+			"type": "string"
+		}
+	]
+}
